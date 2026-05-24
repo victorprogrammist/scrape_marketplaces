@@ -1,0 +1,5 @@
+2026-05-25--02-45-20: parameter dest_filename: C:\work\test_ozon\results\result.json
+2026-05-25--02-45-20: parameter search_string: самолет
+2026-05-25--02-45-20: parameter expected_count_items: 5
+2026-05-25--02-45-20: подключение к https://spicy-goats-wonder.loca.lt
+2026-05-25--02-45-35: Размеры, запрос: 137/131, ответ: 4962/27278, время: 15.081

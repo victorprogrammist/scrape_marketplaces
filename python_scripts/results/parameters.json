@@ -1,0 +1,5 @@
+﻿{
+"dest_filename": "result.json",
+"search_string": "самолет",
+"expected_count_items": 5
+}
