@@ -1,4 +1,3 @@
-<img width="1236" height="653" alt="2026-05-25_14-37" src="https://github.com/user-attachments/assets/f0ee16e6-be21-4070-97e0-03d023b77c65" />
 # Автоматический сбор данных с маркетплейса Ozon
 
 ## Содержание
