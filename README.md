@@ -1,3 +1,4 @@
+<img width="1236" height="653" alt="2026-05-25_14-37" src="https://github.com/user-attachments/assets/f0ee16e6-be21-4070-97e0-03d023b77c65" />
 # Автоматический сбор данных с маркетплейса Ozon
 
 ## Содержание
@@ -21,7 +22,7 @@
 
 Сама конфигурация 1с довольно таки простая, и представляет демонстрацию как загружать товары из сервиса.
 
-<img width="1114" height="553" alt="2026-05-25_02-06" src="https://github.com/user-attachments/assets/92fff012-72c0-43f6-8783-5e68199f469b" />
+<img width="1236" height="653" alt="2026-05-25_14-37" src="https://github.com/user-attachments/assets/630c323c-f3e9-457c-a044-a16fd266d34f" />
 
 Так же товары можно загружать при помощи любых других скриптов.
 
