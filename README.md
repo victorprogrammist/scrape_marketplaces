@@ -69,25 +69,25 @@
 
 | Поле | Описание |
 | :--- | :--- |
-| `i_order` | Позиция в которой товар был на сайте |
+| `position_number` | Позиция в которой товар был на сайте |
 | `sku` | Артикул товара |
 | `title` | Название товара |
 | `url` | Ссылка на карточку товара |
-| `badges` | Бейджики списком |
-| `badge` | Бейджики одной строкой через запятые |
+| `badge_list` | Бейджики списком |
+| `badges` | Бейджики одной строкой через запятые |
 | `src_price` | Цена, как она отображена на сайте |
 | `price` | Цена, отформатированная в число |
-| `src_price_fake` | Цена «до скидки», как она отображена на сайте |
-| `price_fake` | Цена «до скидки», отформатированная в число |
+| `src_fake_price` | Цена «до скидки», как она отображена на сайте |
+| `fake_price` | Цена «до скидки», отформатированная в число |
 | `src_rating` | Рейтинг, как он отображен на сайте |
 | `rating` | Рейтинг, отформатированный в число |
-| `src_count_feedbacks` | Количество отзывов, как оно отображено на сайте |
-| `reviewCount` | Количество отзывов, отформатированное в число |
+| `src_review_count` | Количество отзывов, как оно отображено на сайте |
+| `review_count` | Количество отзывов, отформатированное в число |
 | `brand` | Бренд товара |
-| `src_residue` | Остаток товара, как он отображен на сайте |
-| `residue` | Остаток товара, отформатированный в число |
-| `delivery` | Доставка списком |
-| `deliveryInfo` | Доставка одной строкой через запятые |
+| `src_stock` | Остаток товара, как он отображен на сайте |
+| `stock` | Остаток товара, отформатированный в число |
+| `delivery_list` | Доставка списком |
+| `delivery` | Доставка одной строкой через запятые |
 
 
 ## Примеры запросов и ответов
@@ -105,35 +105,66 @@
 ```
 [
     {
-        "src_sku": "2759136519",
-        "href": "/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=VvtzE6pyLHogLq4XhnLgW6YsPQDMwmFyqjojECOBRgJW",
-        "href0": "kislye-konfety-drazhe-vkus-fruktovyy-2759136519",
-        "badges": [
-            "Распродажа",
+        "src_sku": "2759016743",
+        "href": "/product/marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743/?at=vQtrPYNMMCjwGn4OFDKBJBlcWgpBElUD42AZZuBK42vQ",
+        "href0": "marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743",
+        "badge_list": [
+            "Цена что надо",
             "Стало дешевле"
         ],
-        "src_price": "45 ₽",
-        "src_price_fake": "55 ₽",
-        "title": "Кислые конфеты драже. Вкус фруктовый",
+        "src_price": "54 ₽",
+        "src_fake_price": null,
+        "title": "Мармеладные жевательные конфеты в хрустящей оболочке. Вкус виноград",
         "src_rating": "4.9",
-        "src_count_feedbacks": "8 971",
+        "src_review_count": "12 558",
         "brand": null,
-        "src_residue": null,
-        "delivery": [
+        "src_stock": null,
+        "delivery_list": [
             "Завтра"
         ],
-        "i_page": 1,
-        "i_row": 1,
-        "i_order": 8,
-        "sku": 2759136519,
-        "url": "https://www.ozon.ru/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=VvtzE6pyLHogLq4XhnLgW6YsPQDMwmFyqjojECOBRgJW",
-        "badge": "Распродажа,Стало дешевле",
-        "deliveryInfo": "Завтра",
-        "reviewCount": 8971,
+        "page_number": 1,
+        "row_number": 1,
+        "position_number": 1,
+        "sku": 2759016743,
+        "url": "https://www.ozon.ru/product/marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743/?at=vQtrPYNMMCjwGn4OFDKBJBlcWgpBElUD42AZZuBK42vQ",
+        "badges": "Цена что надо,Стало дешевле",
+        "delivery": "Завтра",
+        "review_count": 12558,
         "rating": 4.9,
-        "price": 45,
-        "price_fake": 55,
-        "residue": 0
+        "price": 54,
+        "fake_price": 0,
+        "stock": 0
+    },
+    {
+        "src_sku": "2759136519",
+        "href": "/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=57twzXjqqcAPRNQXuyGy259c5wp048i961jVLu7y5pGn",
+        "href0": "kislye-konfety-drazhe-vkus-fruktovyy-2759136519",
+        "badge_list": [
+            "Цена что надо",
+            "Стало дешевле"
+        ],
+        "src_price": "44 ₽",
+        "src_fake_price": "55 ₽",
+        "title": "Кислые конфеты драже. Вкус фруктовый",
+        "src_rating": "4.9",
+        "src_review_count": "9 618",
+        "brand": null,
+        "src_stock": null,
+        "delivery_list": [
+            "Завтра"
+        ],
+        "page_number": 1,
+        "row_number": 2,
+        "position_number": 2,
+        "sku": 2759136519,
+        "url": "https://www.ozon.ru/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=57twzXjqqcAPRNQXuyGy259c5wp048i961jVLu7y5pGn",
+        "badges": "Цена что надо,Стало дешевле",
+        "delivery": "Завтра",
+        "review_count": 9618,
+        "rating": 4.9,
+        "price": 44,
+        "fake_price": 55,
+        "stock": 0
     },
     ...
 ```
