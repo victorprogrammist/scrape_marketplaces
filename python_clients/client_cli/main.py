@@ -2,10 +2,10 @@
 import sys
 import json
 
-import use_cli.params
+import client_cli.params
 import tools.ozy_tools
 
-import serverless_client.slc
+import client_tools.api
 
 import asyncio
 
@@ -22,12 +22,12 @@ def final_error(dest_file, msg):
     sys.exit(1)
 
 
-async def main() -> None:
+async def async_main() -> None:
 
     if sys.platform == 'win32':
         sys.stdout.reconfigure(encoding='utf-8')
 
-    params = use_cli.params.read_params_from_file()
+    params = client_cli.params.read_params_from_file()
 
     dest_file = params.get('dest_filename')
 
@@ -36,10 +36,8 @@ async def main() -> None:
         sys.exit(1)
         return
 
-    query = json.dumps(params, indent=4, ensure_ascii=False, sort_keys=False)
-
     try:
-        answer = await serverless_client.slc.serverless_request(query)
+        answer = await client_tools.api.make_request(params)
     except Exception as e:
         final_error(dest_file, tools.ozy_tools.format_error(e))
         sys.exit(1)
@@ -49,4 +47,10 @@ async def main() -> None:
         f.write(answer)
 
 
+def main():
+
+    if sys.platform == 'win32':
+        asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+
+    asyncio.run(async_main())
 

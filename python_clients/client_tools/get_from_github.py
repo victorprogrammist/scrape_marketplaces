@@ -1,7 +1,7 @@
 import aiohttp
 import tools.ozy_tools
 
-async def read_text_from_github() -> str:
+async def get_from_github() -> str:
 
     username = 'victorprogrammist'
     repo = 'do_not_look_here_never_ever_again'

@@ -2,10 +2,11 @@ import asyncio
 import sys
 import aiohttp
 import time
+import json
 
 import tools.ozy_tools
 import tools.content_packer
-import serverless_client.gt_read
+import client_tools.get_from_github
 
 
 async def __start_messaging(url: str, request):
@@ -72,12 +73,22 @@ async def __start_messaging(url: str, request):
             f'Размеры, запрос: {req_packed}/{req_unpacked}, ответ: {ans_packed}/{ans_unpacked}, время: {time_passed:.3f}')
 
 
-async def serverless_request(request):
+async def make_request(request):
 
-    url = await serverless_client.gt_read.read_text_from_github()
-    if url is None:
-        raise Exception("Что-то не так")
+    try:
 
-    return await __start_messaging(url, request)
+        if isinstance(request, dict):
+            request = json.dumps(request, indent=4, ensure_ascii=False, sort_keys=False)
+
+        url = await client_tools.get_from_github.get_from_github()
+        if url is None:
+            raise Exception("Что-то не так")
+
+        return await __start_messaging(url, request)
+
+    except Exception as e:
+
+        return tools.ozy_tools.format_error(e)
+
 
 
