@@ -110,18 +110,16 @@
 ```
 [
     {
-        "src_sku": "2759016743",
-        "href": "/product/marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743/?at=vQtrPYNMMCjwGn4OFDKBJBlcWgpBElUD42AZZuBK42vQ",
-        "href0": "marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743",
+        "src_sku": "2759136519",
         "badge_list": [
             "Цена что надо",
             "Стало дешевле"
         ],
-        "src_price": "54 ₽",
-        "src_fake_price": null,
-        "title": "Мармеладные жевательные конфеты в хрустящей оболочке. Вкус виноград",
+        "src_price": "51 ₽",
+        "src_fake_price": "55 ₽",
+        "title": "Кислые конфеты драже. Вкус фруктовый",
         "src_rating": "4.9",
-        "src_review_count": "12 558",
+        "src_review_count": "9 671",
         "brand": null,
         "src_stock": null,
         "delivery_list": [
@@ -130,29 +128,27 @@
         "page_number": 1,
         "row_number": 1,
         "position_number": 1,
-        "sku": 2759016743,
-        "url": "https://www.ozon.ru/product/marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743/?at=vQtrPYNMMCjwGn4OFDKBJBlcWgpBElUD42AZZuBK42vQ",
+        "sku": 2759136519,
+        "url": "https://www.ozon.ru/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=Rltyp3rojIEyJqjKh6kNvz4FxlDmm1tOWqLQRSjvmNlw",
         "badges": "Цена что надо,Стало дешевле",
         "delivery": "Завтра",
-        "review_count": 12558,
+        "review_count": 9671,
         "rating": 4.9,
-        "price": 54,
-        "fake_price": 0,
+        "price": 51,
+        "fake_price": 55,
         "stock": 0
     },
     {
-        "src_sku": "2759136519",
-        "href": "/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=57twzXjqqcAPRNQXuyGy259c5wp048i961jVLu7y5pGn",
-        "href0": "kislye-konfety-drazhe-vkus-fruktovyy-2759136519",
+        "src_sku": "2759016743",
         "badge_list": [
             "Цена что надо",
             "Стало дешевле"
         ],
-        "src_price": "44 ₽",
-        "src_fake_price": "55 ₽",
-        "title": "Кислые конфеты драже. Вкус фруктовый",
+        "src_price": "54 ₽",
+        "src_fake_price": null,
+        "title": "Мармеладные жевательные конфеты в хрустящей оболочке. Вкус виноград",
         "src_rating": "4.9",
-        "src_review_count": "9 618",
+        "src_review_count": "12 609",
         "brand": null,
         "src_stock": null,
         "delivery_list": [
@@ -161,14 +157,14 @@
         "page_number": 1,
         "row_number": 2,
         "position_number": 2,
-        "sku": 2759136519,
-        "url": "https://www.ozon.ru/product/kislye-konfety-drazhe-vkus-fruktovyy-2759136519/?at=57twzXjqqcAPRNQXuyGy259c5wp048i961jVLu7y5pGn",
+        "sku": 2759016743,
+        "url": "https://www.ozon.ru/product/marmeladnye-zhevatelnye-konfety-v-hrustyashchey-obolochke-vkus-vinograd-2759016743/?at=DqtDW8BwNHRZo8nT5rrQLLtAAoMG4f8Y9Y4Zf7nm3YQ",
         "badges": "Цена что надо,Стало дешевле",
         "delivery": "Завтра",
-        "review_count": 9618,
+        "review_count": 12609,
         "rating": 4.9,
-        "price": 44,
-        "fake_price": 55,
+        "price": 54,
+        "fake_price": 0,
         "stock": 0
     },
     ...
