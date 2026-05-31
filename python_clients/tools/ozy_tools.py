@@ -27,15 +27,15 @@ import asyncio
 
 async def wait_with_timeout(
         event: asyncio.Event,
-        timeout: float,
+        timeout_sec: float,
         event_fail = None
         ) -> bool:
 
     if event_fail is not None:
-        return await wait_with_timeout_0(event, timeout, event_fail)
+        return await wait_with_timeout_0(event, timeout_sec, event_fail)
 
     try:
-        await asyncio.wait_for(event.wait(), timeout=timeout)
+        await asyncio.wait_for(event.wait(), timeout=timeout_sec)
         return True
 
     except TimeoutError:
@@ -45,7 +45,7 @@ async def wait_with_timeout(
 
 async def wait_with_timeout_0(
         event: asyncio.Event,
-        timeout: float,
+        timeout_sec: float,
         event_fail: asyncio.Event
         ) -> bool:
 
@@ -62,7 +62,7 @@ async def wait_with_timeout_0(
 
         done, pending = await asyncio.wait(
             {main_task, fail_task},
-            timeout=timeout,
+            timeout=timeout_sec,
             return_when=asyncio.FIRST_COMPLETED,
         )
 
@@ -178,7 +178,8 @@ def get_filename_within_source_dir(filename):
 
     script_path = os.path.abspath(sys.argv[0])
     source_dir = os.path.dirname(script_path)
-    source_dir = os.path.join(source_dir, '..')
+    #if not getattr(sys, 'frozen', False):
+        #source_dir = os.path.join(source_dir, '..')
     source_dir = os.path.join(source_dir, 'results')
 
     return make_absolute(filename, source_dir)

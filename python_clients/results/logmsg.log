@@ -1,5 +1,7 @@
-2026-05-25--02-45-20: parameter dest_filename: C:\work\test_ozon\results\result.json
-2026-05-25--02-45-20: parameter search_string: самолет
-2026-05-25--02-45-20: parameter expected_count_items: 5
-2026-05-25--02-45-20: подключение к https://spicy-goats-wonder.loca.lt
-2026-05-25--02-45-35: Размеры, запрос: 137/131, ответ: 4962/27278, время: 15.081
+2026-06-01--00-48-03: parameter dest_filename: C:\ozy_mp\results\result.json
+2026-06-01--00-48-03: parameter search_string: самолет
+2026-06-01--00-48-03: parameter url_and_category: 
+2026-06-01--00-48-03: WRONG PARAMETER: url_and_category
+2026-06-01--00-48-03: parameter expected_count_items: 5
+2026-06-01--00-48-03: подключение к https://curly-loops-think.loca.lt
+2026-06-01--00-48-48: Размеры, запрос: 148/150, ответ: 3828/15134, время: 45.254
