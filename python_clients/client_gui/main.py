@@ -2,7 +2,7 @@
 import sys
 import asyncio
 import client_tools.api
-import tools.ozy_tools
+import coms.coms
 
 from PySide6.QtWidgets import (
     QApplication, QWidget,
@@ -48,7 +48,7 @@ class MyWindow(QWidget):
         try:
             return await client_tools.api.make_request(query)
         except Exception as e:
-            return tools.ozy_tools.format_error(e)
+            return coms.coms.format_error(e)
 
 
     def append_result(self, msg):

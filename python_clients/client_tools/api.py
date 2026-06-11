@@ -4,14 +4,14 @@ import aiohttp
 import time
 import json
 
-import tools.ozy_tools
-import tools.content_packer
+import coms.coms
+import coms.content_packer
 import client_tools.get_from_github
 
 
 async def __start_messaging(url: str, request):
 
-    tools.ozy_tools.logmsg(f'подключение к {url}')
+    coms.coms.logmsg(f'подключение к {url}')
 
     TIMEOUT_FOR_AIOHTTP = 60 * 5
 
@@ -19,7 +19,7 @@ async def __start_messaging(url: str, request):
 
     req_unpacked = len(request)
 
-    request = tools.content_packer.pack_message(request, 'gzip')
+    request = coms.content_packer.pack_message(request, 'gzip')
 
     req_packed = len(request)
 
@@ -27,9 +27,7 @@ async def __start_messaging(url: str, request):
     ans_packed = 0
 
     headers = {
-        "Bypass-Tunnel-Reminder": "true",
         "Content-Type": "application/octet-stream",
-        "Content-Transfer-Encoding": "binary",
         "Content-Length": str(len(request))
     }
 
@@ -44,7 +42,7 @@ async def __start_messaging(url: str, request):
 
                     ans_packed = len(answer)
 
-                    _, answer = tools.content_packer.decompress_message(answer)
+                    _, answer = coms.content_packer.decompress_message(answer)
 
                     ans_unpacked = len(answer)
 
@@ -62,14 +60,14 @@ async def __start_messaging(url: str, request):
         raise Exception("Ошибка подключения.")
 
     except Exception as e:
-        tools.ozy_tools.logmsg(tools.ozy_tools.format_error(e))
+        coms.coms.logmsg(coms.coms.format_error(e))
         raise Exception(f"Произошла ошибка: {e}")
 
     finally:
 
         time_passed = time.perf_counter() - time_start
 
-        tools.ozy_tools.logmsg(
+        coms.coms.logmsg(
             f'Размеры, запрос: {req_packed}/{req_unpacked}, ответ: {ans_packed}/{ans_unpacked}, время: {time_passed:.3f}')
 
 
@@ -88,7 +86,7 @@ async def make_request(request):
 
     except Exception as e:
 
-        return tools.ozy_tools.format_error(e)
+        return coms.coms.format_error(e)
 
 
 

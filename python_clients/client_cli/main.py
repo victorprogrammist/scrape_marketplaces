@@ -3,7 +3,7 @@ import sys
 import json
 
 import client_cli.params
-import tools.ozy_tools
+import coms.coms
 
 import client_tools.api
 
@@ -12,7 +12,7 @@ import asyncio
 
 def final_error(dest_file, msg):
 
-    tools.ozy_tools.logmsg(msg)
+    coms.coms.logmsg(msg)
 
     s = json.dumps( {"ошибка": msg}, indent=4, ensure_ascii=False, sort_keys=False)
 
@@ -39,7 +39,7 @@ async def async_main() -> None:
     try:
         answer = await client_tools.api.make_request(params)
     except Exception as e:
-        final_error(dest_file, tools.ozy_tools.format_error(e))
+        final_error(dest_file, coms.coms.format_error(e))
         sys.exit(1)
         return
 

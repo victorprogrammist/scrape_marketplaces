@@ -1,5 +1,5 @@
 import aiohttp
-import tools.ozy_tools
+import coms.coms
 
 async def get_from_github() -> str:
 
@@ -27,6 +27,6 @@ async def get_from_github() -> str:
                     raise Exception(f"Не удалось прочитать github. HTTP Статус: {response.status}")
 
     except Exception as e:
-        tools.ozy_tools.logmsg(tools.ozy_tools.format_error(e))
+        coms.coms.logmsg(coms.coms.format_error(e))
         raise Exception(f"Произошла ошибка при обращении к github: {e}")
 
