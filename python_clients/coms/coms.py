@@ -3,26 +3,27 @@ from datetime import datetime
 import os
 import sys
 from pathlib import Path
-
 import traceback
+import asyncio
+import re
 
 
 global_function_for_logging = None
 global_filename_for_logging = None
 
-import asyncio
 
-#import gzip
+COLLAPSE_WHITESPACE = re.compile(r'\s+')
 
-#def pack_message(message):
-    #return gzip.compress(message.encode('utf-8'))
+def stripped(raw_text):
+    return COLLAPSE_WHITESPACE.sub(' ', raw_text).strip()
 
-#def decompress_message(message):
+def remove_all_spaces(raw_text):
+    return COLLAPSE_WHITESPACE.sub('', raw_text)
 
-    #try:
-        #return gzip.decompress(message).decode('utf-8', errors='ignore')
-    #except:
-        #raise Exception('wrong format incoming data')
+async def locator_get_tagname(locator):
+    # результат всегда в верхнем регистре
+    tag_name = await locator.evaluate("element => element.tagName")
+    return tag_name
 
 
 async def wait_with_timeout(
@@ -174,20 +175,34 @@ def make_absolute(file_path, base_dir):
         return os.path.abspath(combined)
 
 #*******************************************************************
-def get_filename_within_source_dir(filename):
+
+
+def base_path(subpath = None, filename = None):
 
     script_path = os.path.abspath(sys.argv[0])
     source_dir = os.path.dirname(script_path)
-    #if not getattr(sys, 'frozen', False):
-        #source_dir = os.path.join(source_dir, '..')
-    source_dir = os.path.join(source_dir, 'results')
+
+    as_m = script_path.endswith('__main__.py')
+
+    if as_m:
+        source_dir = os.path.join(source_dir, '..')
+
+    if subpath:
+        source_dir = os.path.join(source_dir, subpath)
+
+    if not filename:
+        return source_dir
 
     return make_absolute(filename, source_dir)
 
 
+def get_filename_for_read(filename):
+    return base_path('results', filename)
+
+
 def get_filename_for_store(filename):
 
-    res = get_filename_within_source_dir(filename)
+    res = get_filename_for_read(filename)
 
     return check_make_path_for_file(res)
 
